@@ -1,5 +1,7 @@
-# CAC Reader Setup Guide for Linux
+# CAC Reader Setup Guide for Linux not with 10% more fedora! 
 ## Manual Installation and Configuration
+
+i have forked this to add notes for fedora install i havent made a script or edited them, maybe i might but i probs wont, this is mainly so i dont have the google-fu the little steps! 
 
 This guide walks through setting up an Identiv Smartfold SCR3500-C CAC reader (or similar smart card readers) on Linux systems, specifically Arch Linux and Ubuntu/Debian derivatives.
 
@@ -47,6 +49,28 @@ The specific bus and device numbers will vary, but the vendor ID (04e6) and prod
 ```bash
 sudo pacman -S pcsclite ccid opensc pcsc-tools
 ```
+
+**Package descriptions:**
+- **pcsclite**: PC/SC middleware that provides smart card support
+- **ccid**: Driver for CCID-compliant smart card readers (your SCR3500 is CCID-compliant)
+- **opensc**: Smart card utilities and PKCS#11 module for cryptographic operations
+- **pcsc-tools**: Diagnostic and testing tools for smart card readers
+
+  ### Fedora Linux
+```bash
+sudo dnf pcsc-lite opensc pcsc-tools
+```
+### Citrix install
+TL:DR citrix installer looks for an old package for webkit 
+-**Download Citrx**
+google and the redhat RPM thee CD to Downlaods 
+
+https://www.citrix.com/downloads/workspace-app/linux/
+
+```bash
+sudo rpm -i --nodeps ./ICAClient-rhel-25.08.10.111-0.x86_64.rpm
+```
+
 
 **Package descriptions:**
 - **pcsclite**: PC/SC middleware that provides smart card support
